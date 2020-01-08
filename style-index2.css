@@ -115,13 +115,6 @@ header{
   color: #29353c;
 }
 
-.info-book h4{
-  background-color:#d9e4e9;
-  height: 50px;
-  line-height: 50px;
-  padding-left: 20px;
-}
-
 .info-book ul{
   padding-left: 35px;
   padding-top: 7px;
@@ -136,6 +129,17 @@ header{
   font-weight: 600;
   padding-bottom: 18px;
 }
+
+.list-book-title{
+  display: flex;
+  justify-content: space-between;
+  background-color:#d9e4e9;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .book-title::after{
   display: block;
   content: '';
@@ -187,7 +191,7 @@ header{
 
 .main-content ul li{
   width: 31.733%;
-  height: 324px;
+  height: auto;
   border: 1px solid #e9e9e9;
 }
 
@@ -196,16 +200,14 @@ header{
 }
 
 .information{
-  position: relative;
-  padding: 24px;
+  padding: 16px 14px 25px 21px;
+
 
 }
 
 
 .item-next{
-  /* position: absolute; */
   float: right;
-  padding-top: 30px;
 }
 
 /* footer */
