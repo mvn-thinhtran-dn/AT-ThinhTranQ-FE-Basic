@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="cau1">
+    <h3>Câu 1:</h3>
+    <p>- Có thể thấy undefined có kiểu giá trị là undefined nhưng null lại là 1 object</p>
+    <p>-  Null so sánh với undefined nếu '==' thì nó sẽ trả về true còn '===' thì trả về false</p>
+  </div>
+  <div class="cau2">
+    <h3>Câu 2:</h3>
+    <p>- Khi một đoạn lệnh được khai báo use strict thì tất cả các dòng code ở phía dưới dòng khai báo use strict sẽ được quản lý một cách nghiêm ngặt hơn về cú pháp.</p>
+    <ul>
+      <h4>Ưu điểm:</h4>
+      <li>Nó bắt một số blooper mã hóa phổ biến, ném ngoại lệ.</li>
+      <li>Nó ngăn chặn hoặc ném lỗi, khi các hành động tương đối không an toàn được thực hiện (chẳng hạn như giành quyền truy cập vào đối tượng toàn cầu).</li>
+      <li>Nó vô hiệu hóa các tính năng gây nhầm lẫn hoặc suy nghĩ kém.</li>
+    </ul>
+    <ul>
+      <h4>Nhược điểm:</h4>
+      <li>Không thể sử dụng một biến mà không khai báo</li>
+      <li>Báo lỗi ở những assignments vốn không thể thực hiện</li>
+      <li>Báo lỗi khi delete những thứ không thể xoá</li>
+      <li>Các tham số của một hàm không được phép trùng nhau</li>
+      <li>Không sử dụng được cách viết số thuộc hệ bát phân với tiền tố là [0]</li>
+      <li>Không sử dụng được with</li>
+      <li>Không sử dụng biến được khai báo trong eval</li>
+      <li>Thay đổi cách thức hoạt động của this trong một số trường hợp</li>
+      <li>...</li>
+    </ul>
+  </div>
+  <div class="cau3">
+    <h3>Cau 3:</h3>
+    <p>Nếu dùng == thì nếu 2 giá trị đó bằng nhau thì trả về là true nò ngược lại thì trả về false.Còn dùng === thì nếu 2 giá trị đó bằng nhau và bằng type thì trả về là true còn khác biến nó sẽ trả về false </p>
+    <ul>
+      <h4>Example '==':</h4>
+      <li>0==false // true</li>
+      <li>2==3 //false</li>
+      <li>true==false //false</li>
+    </ul>
+    <ul>
+      <h4>Example '===':</h4>
+      <li>0===false // true</li>
+      <li>
+        <p>var a=2; var b='2'</p>
+        <p>a===b //false</p>
+      </li>
+      <li>true===false //false</li>
+    </ul>
+  </div>
+  <div class="cau4">
+    <h3>Câu 4:</h3>
+    <p>Var: </br>- Với từ khóa var chúng ta có thể khai báo đa dạng các kiểu biến như number, string, boolean, etc
+    tính chất hoisting: nghĩa là dù khai báo ở đâu thì biến đều sẽ được đem lên đầu scope trước khi code được thực hiện.
+    </br>- Biến var sẽ có scope là globally scoped, giữ nguyên giá trị này sau khi thoát ra khỏi block if
+    </p>
+    <p>Let: </br>- Biến let được khai báo sẽ có scope là block scoped,nếu ra khỏi scope được khai báo thì sẽ không thể sử dụng được nữa.</p>
+    <p>Const: </br>- Có scope là block scoped, và hoisting</p>
+  </div>
+  <div class="cau5">
+    <h3>Câu 5:</h3>
+    <ul>
+      <h4>False group</h4>
+      <li>0</li>
+      <li>False</li>
+      <li>''</li>
+      <li>null</li>
+      <li>Undefined</li>
+      <li>NaN</li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="./baitap1-js.js"></script>
+</body>
+</html>
