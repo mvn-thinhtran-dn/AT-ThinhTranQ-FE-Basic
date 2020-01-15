@@ -2,7 +2,6 @@
 var cart = {
   data : null,
 
-  /* LOCALSTORAGE */
   load : function(){
     cart.data = localStorage.getItem('cart');
     if (cart.data == null) { cart.data = {}; }
@@ -14,10 +13,9 @@ var cart = {
   },
 
   list : function(){
-  // list() : update HTML
 
     var container = document.getElementById('cart-list'),
-        item = null, part = null, product = null;
+        item = null, part = null, product = null, table = null;
     container.innerHTML = '';
 
     // Empty cart
@@ -28,12 +26,11 @@ var cart = {
       return true;
     };
     if (isempty(cart.data)) {
-      item = document.createElement('div');
+      item = document.createElement('tr');
       item.innerHTML = 'Cart is empty';
       container.appendChild(item);
     }
 
-    // Not empty
     else {
       // List items
       var total = 0, subtotal = 0;
@@ -43,52 +40,72 @@ var cart = {
         product = cart.data[i];
 
         // Name
-        part = document.createElement('td');
+        table = document.createElement('td');
+        part = document.createElement('span');
         part.innerHTML = product['name'];
         part.classList.add('c-name');
-        item.appendChild(part);
+        table.appendChild(part);
+        item.appendChild(table);
+
+        // Product Price
+        table = document.createElement('td');
+        part = document.createElement('span');
+        part.innerHTML = '$' + product['price'];
+        part.classList.add('c-price');
+        table.appendChild(part);
+        item.appendChild(table);
 
         // Quantity
+        table = document.createElement('td');
         part = document.createElement('input');
         part.type = 'number';
         part.value = product['qty'];
         part.dataset.id = i;
         part.classList.add('c-qty');
         part.addEventListener('change', cart.change);
-        item.appendChild(part);
-
-        // Product Price
-        part = document.createElement('td');
-        part.innerHTML = '$' +product['price'];
-        part.classList.add('c-price');
-        item.appendChild(part);
+        table.appendChild(part);
+        item.appendChild(table);
 
         // Subtotal
+        table = document.createElement('td');
         subtotal = product['qty'] * product['price'];
         total += subtotal;
-        container.appendChild(item);
-        part = document.createElement('td');
+        part = document.createElement('span');
         part.innerHTML = '$' + subtotal;
         part.classList.add('c-subtotal');
-        item.appendChild(part);
+        table.appendChild(part);
+        item.appendChild(table);
 
-        //Delete
-        part = document.createElement('td');
-        part.innerHTML = '$' +product['price'];
-        part.classList.add('c-price');
-        item.appendChild(part);
+        container.appendChild(item);
+
+        // Delete
+        table = document.createElement('td');
+        part = document.createElement('button');
+        part.classList.add('c-delete');
+        part.innerHTML = 'X';
+        part.dataset.id = i;
+        part.addEventListener('click', cart.delete);
+        table.appendChild(part);
+        item.appendChild(table);
       }
 
       // CHECKOUT TOTAL
-      part = document.createElement('tr');
-      part.innerHTML = 'Total: ' + '$' + total;
+      table = document.createElement('td');
+      part = document.createElement('span');
+      part.innerHTML = 'Total:';
+      table.appendChild(part);
+      item.appendChild(table);
+
+      table = document.createElement('td');
+      part = document.createElement('span');
+      part.innerHTML = '$' + total;
       part.classList.add('c-total');
-      item.appendChild(part);
-      
+      table.appendChild(part);
+      item.appendChild(table);
     }
   },
 
-  change : function(){
+  change : function() {
   // change() : change quantity
 
     if (this.value == 0) {
@@ -99,10 +116,17 @@ var cart = {
     cart.save();
     cart.list();
   },
+
+  delete : function() {
+    delete cart.data[this.dataset.id];
+    cart.save();
+    cart.list();
+  }
+
 };
 
 // Load previous cart and update HTML on load
-window.addEventListener("load", function(){
+window.addEventListener('load', function(){
   cart.load();
   cart.list();
 });

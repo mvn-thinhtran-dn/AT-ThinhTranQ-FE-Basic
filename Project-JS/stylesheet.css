@@ -204,11 +204,27 @@ header {
 }
 
 .table-cart td{
-  border: 1px solid #000;
+  border: 2px solid #000;
 }
 
-.c-item {
+.table-cart {
+  text-align: center;
+  margin: auto;
+  width: 100%;
 }
+
+.table-product:last-child {
+  border: 0px solid;
+}
+
+.c-delete {
+  width: 100%;
+}
+
+.table-product {
+  font-weight: bold;
+}
+
 /* Footer */
 footer  { 
   height: 260px; 

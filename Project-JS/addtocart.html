@@ -41,7 +41,7 @@
         <a href="#"><img src="./img/youtu.png"></a>
       </nav>
       <div class="header-menu-cart">
-        <a class="add-cart-link" href="addtocart.html"><img class="add-to-cart-img" src="./img/add-to-cart.png"></a>
+        <a class="add-cart-link" data-toggle="modal" data-target="#cart" href="addtocart.html"><img class="add-to-cart-img" src="./img/add-to-cart.png"> (<span id = "js-total-count"></span>)</a>
       </div>
     </section>
   </header>
@@ -54,14 +54,15 @@
         <table class="table-cart">
           <thead>
             <tr>
-              <td><span>Product</span></td>
-              <td><span>Price</span></td>
-              <td><span>Quantity</span></td>
-              <td><span>Subtotal</span></td>
-              <td></td>
+              <td class="table-product"><span>Product</span></td>
+              <td class="table-product"><span>Price</span></td>
+              <td class="table-product"><span>Quantity</span></td>
+              <td class="table-product"><span>Subtotal</span></td>
+              <td class="table-product"></td>
             </tr>
           </thead>
           <tbody id="cart-list"></tbody>
+          <tfoot id="js-total"></tfoot>
         </table>
       </div>
     </section>
@@ -113,6 +114,7 @@
       <span>DESIGN BY <a href="#" class="ddcom">DD.COM</a></span>
     </section>
   </footer>
+  <script src="common.js"></script>
   <script src="cart.js"></script>
 </body>
 </html>
