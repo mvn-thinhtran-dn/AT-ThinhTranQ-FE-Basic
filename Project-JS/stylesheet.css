@@ -161,10 +161,20 @@ header {
 #cart-wrap { 
   display: flex;
   justify-content: space-between; 
+  padding-top: 30px;
   max-width: 100%;
 }
 /* [PRODUCTS] */
-#cart-products {
+
+.border-corners {
+  border: solid 5px #999;
+  background: #999;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+#js-cart-products {
   padding: 20px;
   display: flex;
   display: flexbox;
@@ -208,6 +218,8 @@ header {
 }
 
 .table-cart {
+  padding-top: 30px;
+  border-collapse: collapse;
   text-align: center;
   margin: auto;
   width: 100%;

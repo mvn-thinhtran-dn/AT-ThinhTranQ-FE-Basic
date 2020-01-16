@@ -1,132 +1,85 @@
-/* SHOPPING CART */
-var cart = {
-  data : null,
+var $Tbody = document.getElementById('js-cart-list');
+var $Tfooter = document.getElementById('js-total');
+var tempTr, temptd;
+function renderCarts() {
+  var cartsArray = window.localStorage.getItem('carts')
+  cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
+  var total = 0, subtotal = 0;
+  for (var i = 0; i < cartsArray.length; i++) {
+    subtotal = cartsArray[i].count * cartsArray[i].price;
+    total += subtotal;
+    tempTr = document.createElement('tr');
+    //Stt.
+    temptd = document.createElement('td');
+    temptd.innerHTML = i+1;
+    tempTr.appendChild(temptd);
 
-  load : function(){
-    cart.data = localStorage.getItem('cart');
-    if (cart.data == null) { cart.data = {}; }
-    else { cart.data = JSON.parse(cart.data); }
-  },
+    //Name.
+    temptd = document.createElement('td');
+    temptd.innerHTML = cartsArray[i].id;
+    tempTr.appendChild(temptd);
 
-  save : function(){
-    localStorage.setItem('cart', JSON.stringify(cart.data));
-  },
+    //Quantity.
+    temptd = document.createElement('td');
+    temptd.innerHTML = cartsArray[i].count;
+    tempTr.appendChild(temptd);
 
-  list : function(){
+    //Price.
+    temptd = document.createElement('td');
+    temptd.innerHTML = cartsArray[i].price;
+    tempTr.appendChild(temptd);
 
-    var container = document.getElementById('cart-list'),
-        item = null, part = null, product = null, table = null;
-    container.innerHTML = '';
+    //Subtotal.
+    temptd = document.createElement('td');
+    temptd.innerHTML = '$' + subtotal;
+    tempTr.appendChild(temptd);
 
-    // Empty cart
-    var isempty = function(obj){
-      for (var key in obj) {
-        if(obj.hasOwnProperty(key)) { return false; }
-      }
-      return true;
-    };
-    if (isempty(cart.data)) {
-      item = document.createElement('tr');
-      item.innerHTML = 'Cart is empty';
-      container.appendChild(item);
-    }
+    //Btn-Delete.
+    tempButton = document.createElement('button');
+    temptd = document.createElement('td');
+    tempButton.id = 'remove-' + cartsArray[i].id;
+    tempButton.classList.add('c-delete');
+    tempContent = document.createTextNode('X');
+    tempButton.appendChild(tempContent);
+    temptd.appendChild(tempButton);
+    tempTr.appendChild(temptd);
+    tempTr.id = 'row-' + cartsArray[i].id;
+    tempButton.addEventListener('click', onclickbtn, false);
 
-    else {
-      // List items
-      var total = 0, subtotal = 0;
-      for (var i in cart.data) {
-        item = document.createElement('tr');
-        item.classList.add('c-item');
-        product = cart.data[i];
-
-        // Name
-        table = document.createElement('td');
-        part = document.createElement('span');
-        part.innerHTML = product['name'];
-        part.classList.add('c-name');
-        table.appendChild(part);
-        item.appendChild(table);
-
-        // Product Price
-        table = document.createElement('td');
-        part = document.createElement('span');
-        part.innerHTML = '$' + product['price'];
-        part.classList.add('c-price');
-        table.appendChild(part);
-        item.appendChild(table);
-
-        // Quantity
-        table = document.createElement('td');
-        part = document.createElement('input');
-        part.type = 'number';
-        part.value = product['qty'];
-        part.dataset.id = i;
-        part.classList.add('c-qty');
-        part.addEventListener('change', cart.change);
-        table.appendChild(part);
-        item.appendChild(table);
-
-        // Subtotal
-        table = document.createElement('td');
-        subtotal = product['qty'] * product['price'];
-        total += subtotal;
-        part = document.createElement('span');
-        part.innerHTML = '$' + subtotal;
-        part.classList.add('c-subtotal');
-        table.appendChild(part);
-        item.appendChild(table);
-
-        container.appendChild(item);
-
-        // Delete
-        table = document.createElement('td');
-        part = document.createElement('button');
-        part.classList.add('c-delete');
-        part.innerHTML = 'X';
-        part.dataset.id = i;
-        part.addEventListener('click', cart.delete);
-        table.appendChild(part);
-        item.appendChild(table);
-      }
-
-      // CHECKOUT TOTAL
-      table = document.createElement('td');
-      part = document.createElement('span');
-      part.innerHTML = 'Total:';
-      table.appendChild(part);
-      item.appendChild(table);
-
-      table = document.createElement('td');
-      part = document.createElement('span');
-      part.innerHTML = '$' + total;
-      part.classList.add('c-total');
-      table.appendChild(part);
-      item.appendChild(table);
-    }
-  },
-
-  change : function() {
-  // change() : change quantity
-
-    if (this.value == 0) {
-      delete cart.data[this.dataset.id];
-    } else {
-      cart.data[this.dataset.id]['qty'] = this.value;
-    }
-    cart.save();
-    cart.list();
-  },
-
-  delete : function() {
-    delete cart.data[this.dataset.id];
-    cart.save();
-    cart.list();
+    $Tbody.appendChild(tempTr);
   }
+  //ColSpan.
+  tempTr = document.createElement('tr');
+  temptd = document.createElement('td');
+  temptd.innerHTML = '';
+  temptd.setAttribute('colspan',3);
+  tempTr.appendChild(temptd);
 
-};
+  temptd = document.createElement('td');
+  temptd.innerHTML = 'Total: ';
+  tempTr.appendChild(temptd);
 
-// Load previous cart and update HTML on load
-window.addEventListener('load', function(){
-  cart.load();
-  cart.list();
-});
+  temptd = document.createElement('td');
+  temptd.innerHTML = '$' + total;
+  tempTr.appendChild(temptd);
+
+  $Tfooter.appendChild(tempTr);
+}
+
+function onclickbtn(e) {
+  var cartsArray = localStorage.getItem('carts')
+  cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
+  document.getElementById('' + e.currentTarget.id)
+  for (var i = 0; i < cartsArray.length; i++) {
+    if(e.currentTarget.id === 'remove-' + cartsArray[i].id) {
+      cartsArray.splice(i, 1);
+    }
+  }
+  localStorage.setItem("carts", JSON.stringify(cartsArray));
+  var $row = document.getElementById(e.currentTarget.id.replace(/remove-/, 'row-'));
+  $row.remove();
+  location.reload();
+  numberCart();
+}
+
+renderCarts();
