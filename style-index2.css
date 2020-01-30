@@ -40,27 +40,28 @@ header {
   border-bottom: 1px solid #e9e9e9;
 }
 
-.item-logo {
+.logo {
   display: flex;
   align-items: center;
 }
 
-.item-logo-list {
+.logo-list {
   padding-top: 11px;
   line-height: 27px;
 }
 
-.item-logo-item {
+.logo-item {
   padding-left: 18px;
   list-style-type: none;
 }
 
-.item-logo-title {
+.logo-title {
   font-family: 'utm-avobold'; 
   font-size: 19px;
+  text-transform: uppercase;
 }
 
-.item-logo-item {
+.logo-item {
   font-size: 17px;
 }
 
@@ -131,6 +132,7 @@ header {
   display: flex;
   text-decoration: none;
   text-align: center;
+  text-transform: uppercase;
   color: #a0a0a0;
   font-size: 12px;
 }
@@ -143,11 +145,11 @@ header {
   color: #62c6f8;
 }
 
-.item-fagoyo {
+.fagoyo {
   padding-top: 19px;
 }
 
-.item-fagoyo-link:nth-child(2) {
+.fagoyo-link:nth-child(2) {
   padding-left: 6px;
   padding-right: 6px;
 }
@@ -206,10 +208,15 @@ header {
 .list-book-title-top {
   color: #6d777c;
   font-size: 11px;
+  text-transform: uppercase;
 }
 
 .title-children {
   margin-top: 25px;
+}
+
+.book-title {
+  text-transform: uppercase;
 }
 
 .book-title::after {
@@ -281,19 +288,20 @@ header {
 
 .information-title {
   padding-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .information span {
   line-height: 17px;
 }
 
-.item-next {
+.next {
   display: flex;
   justify-content: flex-end;
   height: 20px;
 }
 
-.item-next-link {
+.next-link {
   padding-top: 5px;
 }
 
@@ -310,6 +318,7 @@ footer {
 .footer-top { 
   display: flex;
   height: 202px;
+  text-transform: uppercase;
   font-size: 12px;
   border-bottom: 1px solid #81d1f9;
 }
@@ -367,6 +376,7 @@ footer {
   display: flex;
   justify-content: space-between;
   line-height: 59px;
+  text-transform: uppercase;
   font-size: 12.5px;
 }
 
