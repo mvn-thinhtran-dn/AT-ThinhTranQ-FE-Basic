@@ -1,5 +1,5 @@
 var productMain = document.getElementById('js-cart-products');
-var itemdiv, itemh4, itemP, itemimg, itembutton, itemSpan, subNum, cardsArray;
+var itemdiv, itemP, itemimg, itembutton, itemSpan, subNum, cardsArray;
 function renderProduct() {
   for (var i = 0, leng = products.length; i < leng; i++) {
     itemdiv = document.createElement('div');
@@ -10,10 +10,10 @@ function renderProduct() {
     itemimg.classList.add('p-img');
     itemdiv.appendChild(itemimg);
 
-    itemh4 = document.createElement('div');
-    itemh4.innerHTML = products[i].id;
-    itemh4.classList.add('p-name');
-    itemdiv.appendChild(itemh4);
+    itemdiv = document.createElement('div');
+    itemdiv.innerHTML = products[i].id;
+    itemdiv.classList.add('p-name');
+    itemdiv.appendChild(itemdiv);
 
     itemP = document.createElement('div');
     itemP.innerHTML = products[i].desc;
