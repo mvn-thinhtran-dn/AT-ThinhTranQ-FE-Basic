@@ -3,10 +3,14 @@ function arrayComment() {
 	comment = comment ? JSON.parse(comment) : [];
 	var inp = document.getElementsByClassName('btn-add')[0];
 	inp.addEventListener('click', function() {
-		comment.push(document.getElementById('js-input-comment').value);
-		localStorage.setItem('ArrComment', JSON.stringify(comment));
-		renderComment();
-		document.getElementById('js-input-comment').value = '';
+		if(document.getElementById('js-input-comment').value) {
+			comment.push(document.getElementById('js-input-comment').value);
+			localStorage.setItem('ArrComment', JSON.stringify(comment));
+			renderComment();
+			document.getElementById('js-input-comment').value = '';
+		}else {
+			alert('You need to enter a comment!');
+		}
 	})
 }
 
@@ -16,7 +20,7 @@ function renderComment() {
 	var content = comment.map(function (item, index) {
 	  return '<div class = "comment-info">' + '<div class="comment-info-img">' 
 	  + '<img class="img-comment" src="img/instagram.png">' + '</div>' 
-	  + '<div class="comment-info-content">' + '<section class = "comment-content">' + '<h3>ThinhTran:</3>' 
+	  + '<div class="comment-info-content">' + '<section class = "comment-content">' + '<h3>ThinhTran:</h3>' 
 	  + '<p class="comment-text">' + item + '</p>'+ '</section>' + '<div class = "comment-remove">' +'<button class="btn-remove" data-id =' + index + '>X</button></div></div></div>';
 	});
 	resultComment.innerHTML = content.join('');
