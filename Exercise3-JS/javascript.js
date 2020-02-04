@@ -17,6 +17,8 @@ function arrayComment() {
 function renderComment() {
 	var resultComment = document.getElementById('js-main-comment');
 	var comment = JSON.parse(localStorage.getItem('ArrComment'));
+	comment = comment? comment: [];
+	resultComment.innerHTML = '';
 	var content = comment.map(function (item, index) {
 	  return '<div class = "comment-info">' + '<div class="comment-info-img">' 
 	  + '<img class="img-comment" src="img/instagram.png">' + '</div>' 
@@ -34,7 +36,8 @@ function removeComent() {
 		remove[i].addEventListener('click', function() {
 			var idindex = event.target.dataset.id;
       comment.splice(idindex, 1);
-      localStorage.setItem('ArrComment', JSON.stringify(comment));
+			localStorage.setItem('ArrComment', JSON.stringify(comment));
+			console.log(comment);
       renderComment();
 		})
 	}
