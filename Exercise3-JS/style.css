@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;  
+}
+
+.container {
+  padding-left: 50px;
+  padding-right: 50px;  
+}
+
+.header-top {
+  line-height: 0;
+  display: flex;
+  padding: 20px 50px 20px 50px;
+  justify-content: space-between;
+  border-bottom: 1px solid #000000 ;
+}
+
+.header-top-nav {
+}
+
+.menu-list {
+  display: flex;
+}
+
+.menu-item {
+  list-style: none;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.menu-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  
+}
+.img-logo {
+  width: 150px;
+  line-height: auto;
+}
+
+.main-title {
+  padding: 80px;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.main-share {
+  margin: auto;
+  margin-top: 100px;
+}
+
+.main-share-list {
+  display: flex;
+  justify-content: center;
+}
+
+.main-content {
+  font-size: 20px;
+}
+
+.main-share-item {
+  padding: 10px;
+  list-style: none  ;
+}
+
+.main-share-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+
+.img-share {
+  width: 40px;
+  height: 40px;
+}
+
+.input-comment {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.img-comment {
+  padding-right: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.input-comment-texarea {
+  width: 100%;
+  height: 80px;
+}
+
+.btn-add {
+  border-radius: 50%;  
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 50px;
+  margin: 25px;
+  background-color: aqua;
+}
+
+.btn-remove {
+  border-radius: 50%;  
+}
+
+.comment-info {
+  display: flex;
+  padding: 20px 20px 20px 0px;
+  border-bottom: 1px solid #000000;
+}
+
+.comment-info-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comment-remove {
+  right: 50px;
+}
+
+footer {
+  border-top: 1px solid #000000;
+  background-color: blueviolet;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #000000 ;
+}
