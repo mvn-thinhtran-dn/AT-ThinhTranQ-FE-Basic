@@ -13,6 +13,7 @@ function arrayComment() {
 		}
 		event.preventDefault();
 	})
+
 }
 
 function renderComment(event) {
@@ -24,7 +25,8 @@ function renderComment(event) {
 	  return '<div class = "comment-info">' + '<div class="comment-info-img">' 
 	  + '<img class="img-comment" src="img/instagram.png">' + '</div>' 
 	  + '<div class="comment-info-content">' + '<section class = "comment-content">' + '<h3>ThinhTran:</h3>' 
-	  + '<p class="comment-text">' + item + '</p>'+ '</section>' + '<div class = "comment-remove">' +'<button class="btn-remove" data-id =' + index + '>X</button></div></div></div>';
+		+ '<p class="comment-text">' + item + '</p>'+ '</section>' + '<div class = "comment-remove">' 
+		+'<button class="btn-remove" data-id =' + index + '>X</button></div></div></div>';
 	});
 	resultComment.innerHTML = content.join('');
 	removeComment();
