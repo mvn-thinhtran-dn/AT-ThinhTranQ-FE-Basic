@@ -1,7 +1,15 @@
 var productMain = document.getElementById('js-cart-products');
-var itemdiv, itemP, itemimg, itembutton, itemSpan, subNum, cardsArray;
+var itemdiv;
+var itemh;
+var itemP;
+var itemimg;
+var itembutton;
+var itemSpan;
+var subNum;
+var cardsArray;
 function renderProduct() {
-  for (var i = 0, leng = products.length; i < leng; i++) {
+  var leng = products.length;
+  for (var i = 0; i < leng; i++) {
     itemdiv = document.createElement('div');
     itemdiv.classList.add('p-item');
 
@@ -10,10 +18,10 @@ function renderProduct() {
     itemimg.classList.add('p-img');
     itemdiv.appendChild(itemimg);
 
-    itemdiv = document.createElement('div');
-    itemdiv.innerHTML = products[i].id;
-    itemdiv.classList.add('p-name');
-    itemdiv.appendChild(itemdiv);
+    itemh3 = document.createElement('div');
+    itemh3.innerHTML = products[i].id;
+    itemh3.classList.add('p-name');
+    itemh3.appendChild(itemdiv);
 
     itemP = document.createElement('div');
     itemP.innerHTML = products[i].desc;
@@ -44,15 +52,15 @@ var getCarts = function () {
 
 function addHandleEvent(e) {
   cardsArray = getCarts();
-  numbercart = searchArray(e.currentTarget.id, cartsArray, 'add-');
-  if (numbercart) {
-    numbercart.count++;
+  updatenumber = findObjFromArr(e.currentTarget.id, cartsArray, 'add-');
+  if (updatenumber) {
+    updatenumber.count++;
   } else {
-    numbercart = searchArray(e.currentTarget.id, products, 'add-');
-    cartsArray.push({ id: numbercart.id, count: 1, price: numbercart.price })
+    updatenumber = findObjFromArr(e.currentTarget.id, products, 'add-');
+    cartsArray.push({ id: updatenumber.id, count: 1, price: updatenumber.price })
   }
   localStorage.setItem("carts", JSON.stringify(cartsArray));
-  numberCart();
+  updateNumberCart();
 }
 
 renderProduct();

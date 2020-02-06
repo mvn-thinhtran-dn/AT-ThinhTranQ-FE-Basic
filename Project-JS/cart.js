@@ -1,12 +1,14 @@
-let $Tbody = document.getElementById('js-cart-list');
-let $Tfooter = document.getElementById('js-total');
-let tempTr, temptd;
+var $Tbody = document.getElementById('js-cart-list');
+var $Tfooter = document.getElementById('js-total');
+var tempTr, temptd;
 function renderCarts() {
-  let cartsArray = window.localStorage.getItem('carts')
+  var cartsArray = window.localStorage.getItem('carts')
   cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
-  let total = 0, subtotal = 0;
+  var total = 0;
+  var subtotal = 0;
   var age = 10;
-  for (let i = 0; i < cartsArray.length; i++) {
+  var leng = cartsArray.length;
+  for (var i = 0; i < leng; i++) {
     subtotal = cartsArray[i].count * cartsArray[i].price;
     total += subtotal;
     tempTr = document.createElement('tr');
@@ -68,19 +70,20 @@ function renderCarts() {
 }
 
 function onclickbtn(e) {
-  let cartsArray = localStorage.getItem('carts');
+  var cartsArray = localStorage.getItem('carts');
   cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
   document.getElementById('' + e.currentTarget.id)
-  for (let i = 0; i < cartsArray.length; i++) {
+  var leng = cartsArray.length;
+  for (var i = 0; i < leng; i++) {
     if(e.currentTarget.id === 'rm' + cartsArray[i].id) {
       cartsArray.splice(i, 1);
     }
   }
   localStorage.setItem("carts", JSON.stringify(cartsArray));
-  let $row = document.getElementById(e.currentTarget.id.replace(/rm/, 'row-'));
+  var $row = document.getElementById(e.currentTarget.id.replace(/rm/, 'row-'));
   $row.remove();
   location.reload();
-  numberCart();
+  updateNumberCart();
 }
 
 renderCarts();
