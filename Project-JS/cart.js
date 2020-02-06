@@ -2,7 +2,7 @@ var $Tbody = document.getElementById('js-cart-list');
 var $Tfooter = document.getElementById('js-total');
 var tempTr, temptd;
 function renderCarts() {
-  var cartsArray = window.localStorage.getItem('carts')
+  var cartsArray = localStorage.getItem('carts')
   cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
   var total = 0;
   var subtotal = 0;
