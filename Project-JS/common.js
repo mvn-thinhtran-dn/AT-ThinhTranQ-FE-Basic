@@ -50,17 +50,20 @@ var products = [
 ];
 var cartNumber = document.getElementById('js-total-count');
 function findObjFromArr(idKey, myArray, prefix) {
-  for (var i = 0; i < myArray.length; i++) {
+  var leng = myArray.length;
+  for (var i = 0; i < leng; i++) {
     if (prefix + myArray[i].id === idKey) {
       return myArray[i];
     }
   }
 }
+
 function updateNumberCart() {
   var cartsArray = localStorage.getItem('carts');
   cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
   var number = 0;
-  for (var i = 0; i < cartsArray.length; i++) {
+  var leng = cartsArray.length;
+  for (var i = 0; i < leng; i++) {
     number += cartsArray[i].count;
   }
   cartNumber.innerHTML = number;
