@@ -47,7 +47,7 @@ function renderCarts() {
     temptd.appendChild(tempButton);
     tempTr.appendChild(temptd);
     tempTr.id = 'row-' + cartsArray[i].id;
-    tempButton.addEventListener('click', onclickbtn, false);
+    tempButton.addEventListener('click', removeOnclickBtn, false);
 
     $Tbody.appendChild(tempTr);
   }
@@ -68,8 +68,7 @@ function renderCarts() {
 
   $Tfooter.appendChild(tempTr);
 }
-
-function onclickbtn(e) {
+function removeOnclickBtn(e) {
   var cartsArray = localStorage.getItem('carts');
   cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
   document.getElementById('' + e.currentTarget.id)
