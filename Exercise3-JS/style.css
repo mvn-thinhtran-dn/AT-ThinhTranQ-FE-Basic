@@ -138,9 +138,9 @@
   right: 50px;
 }
 
-footer {
+.page-footer {
   border-top: 1px solid #000000;
-  background-color: blueviolet;
+  background-color: #a72e57;
 }
 
 .footer-top {

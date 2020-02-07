@@ -1,13 +1,19 @@
+var comment;
+function localStorageComment () {
+	comment = localStorage.getItem('ArrComment');
+	comment = comment ? JSON.parse(comment) : [];
+}
+
 function arrayComment() {
 	var inp = document.getElementsByClassName('btn-add')[0];
+	var valueInputComment = document.getElementById('js-input-comment').value;
 	inp.addEventListener('click', function() {
-		var comment = localStorage.getItem('ArrComment');
-		comment = comment ? JSON.parse(comment) : [];
-		if(document.getElementById('js-input-comment').value) {
-			comment.push(document.getElementById('js-input-comment').value);
+		localStorageComment();
+		if(valueInputComment) {
+			comment.push(valueInputComment);
 			localStorage.setItem('ArrComment', JSON.stringify(comment));
 			renderComment();
-			document.getElementById('js-input-comment').value = '';
+			valueInputComment = '';
 		}else {
 			alert('You need to enter a comment!');
 		}
@@ -18,8 +24,7 @@ function arrayComment() {
 
 function renderComment(event) {
 	var resultComment = document.getElementById('js-main-comment');
-	var comment = JSON.parse(localStorage.getItem('ArrComment'));
-	comment = comment ? comment : [];
+	localStorageComment();
 	resultComment.innerHTML = '';
 	var content = comment.map(function (item, index) {
 	  return '<div class = "comment-info">' + '<div class="comment-info-img">' 
@@ -34,8 +39,7 @@ function renderComment(event) {
 
 function removeComment() {
 	var remove = document.getElementsByClassName('btn-remove');
-	var comment = localStorage.getItem('ArrComment');
-	comment = comment ? JSON.parse(comment) : [];
+	localStorageComment();
 	for (var i = 0, leng = remove.length; i < leng; i++) {
 		remove[i].addEventListener('click', function() {
 			var idindex = event.target.dataset.id;
