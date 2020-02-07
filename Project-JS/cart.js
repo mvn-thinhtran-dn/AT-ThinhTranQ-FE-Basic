@@ -1,6 +1,7 @@
 var $Tbody = document.getElementById('js-cart-list');
 var $Tfooter = document.getElementById('js-total');
-var tempTr, temptd;
+var tempTr;
+var temptd;
 function renderCarts() {
   var cartsArray = localStorage.getItem('carts')
   cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
