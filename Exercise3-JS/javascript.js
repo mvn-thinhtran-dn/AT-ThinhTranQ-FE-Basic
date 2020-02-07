@@ -1,4 +1,5 @@
 var comment;
+
 function localStorageComment () {
 	comment = localStorage.getItem('ArrComment');
 	comment = comment ? JSON.parse(comment) : [];
@@ -22,7 +23,7 @@ function arrayComment() {
 
 }
 
-function renderComment(event) {
+function renderComment() {
 	var resultComment = document.getElementById('js-main-comment');
 	localStorageComment();
 	resultComment.innerHTML = '';
@@ -39,8 +40,9 @@ function renderComment(event) {
 
 function removeComment() {
 	var remove = document.getElementsByClassName('btn-remove');
+	var leng = remove.length;
 	localStorageComment();
-	for (var i = 0, leng = remove.length; i < leng; i++) {
+	for (var i = 0; i < leng; i++) {
 		remove[i].addEventListener('click', function() {
 			var idindex = event.target.dataset.id;
       comment.splice(idindex, 1);
