@@ -48,6 +48,14 @@ var products = [
     price: 840
   }
 ];
+
+var cartsArray;
+
+function localStorageGetItem() {
+  cartsArray = localStorage.getItem('carts')
+  cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
+}
+
 var cartNumber = document.getElementById('js-total-count');
 function findObjFromArr(idKey, myArray, prefix) {
   var leng = myArray.length;
@@ -58,9 +66,13 @@ function findObjFromArr(idKey, myArray, prefix) {
   }
 }
 
+var getCarts = function () {
+  cartsArray = localStorage.getItem('carts');
+  return cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
+}
+
 function updateNumberCart() {
-  var cartsArray = localStorage.getItem('carts');
-  cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
+  localStorageGetItem();
   var number = 0;
   var leng = cartsArray.length;
   for (var i = 0; i < leng; i++) {

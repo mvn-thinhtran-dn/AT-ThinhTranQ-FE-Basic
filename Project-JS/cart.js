@@ -3,8 +3,7 @@ var $Tfooter = document.getElementById('js-total');
 var tempTr;
 var temptd;
 function renderCarts() {
-  var cartsArray = localStorage.getItem('carts')
-  cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
+  localStorageGetItem();
   var total = 0;
   var subtotal = 0;
   var age = 10;
@@ -70,8 +69,7 @@ function renderCarts() {
   $Tfooter.appendChild(tempTr);
 }
 function removeOnclickBtn(e) {
-  var cartsArray = localStorage.getItem('carts');
-  cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
+  localStorageGetItem();
   document.getElementById('' + e.currentTarget.id)
   var leng = cartsArray.length;
   for (var i = 0; i < leng; i++) {

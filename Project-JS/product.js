@@ -43,11 +43,6 @@ function renderProduct() {
   }
 }
 
-var getCarts = function () {
-  cartsArray = localStorage.getItem('carts')
-  return cartsArray = cartsArray ? JSON.parse(cartsArray) : [];
-}
-
 function addHandleEvent(e) {
   cardsArray = getCarts();
   updatenumber = findObjFromArr(e.currentTarget.id, cartsArray, 'add-');

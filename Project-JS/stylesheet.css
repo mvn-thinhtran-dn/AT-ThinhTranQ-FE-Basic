@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-header {
+.page-header {
   width: 100%;
 }
 .header-top {
@@ -238,7 +238,7 @@ header {
 }
 
 /* Footer */
-footer  { 
+.page-footer  { 
   height: 260px; 
   clear: both; 
   position: relative;
@@ -260,6 +260,8 @@ footer  {
 }
 
 .footer-list {
+  line-height: 30px;
+  padding-top: 12px;
   padding-left: 14px;
 }
 .footer-top h4 {
