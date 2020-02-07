@@ -7,16 +7,15 @@ function localStorageComment () {
 
 function arrayComment() {
 	var inp = document.getElementsByClassName('btn-add')[0];
-	var valueInputComment = document.getElementById('js-input-comment').value;
 	inp.addEventListener('click', function() {
 		localStorageComment();
-		if(valueInputComment) {
-			comment.push(valueInputComment);
+		if(document.getElementById('js-input-comment').value) {
+			comment.push(document.getElementById('js-input-comment').value);
 			localStorage.setItem('ArrComment', JSON.stringify(comment));
 			renderComment();
-			valueInputComment = '';
+			document.getElementById('js-input-comment').value = '';
 		}else {
-			alert('You need to enter a comment!');
+			alert('You are virus Corona	!');
 		}
 		event.preventDefault();
 	})
@@ -36,6 +35,7 @@ function renderComment() {
 	});
 	resultComment.innerHTML = content.join('');
 	removeComment();
+	countComment();
 }
 
 function removeComment() {
@@ -53,6 +53,11 @@ function removeComment() {
 	}
 }
 
+function countComment() {
+	localStorageComment();
+	var countComment = document.getElementById('js-count-comment');
+	countComment.innerHTML = '<h3>Comment (' + comment.length +')</h3>';
+}
 arrayComment();
 renderComment();
 removeComment();
