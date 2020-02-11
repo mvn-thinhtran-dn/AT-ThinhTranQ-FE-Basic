@@ -19,7 +19,6 @@ function arrayComment() {
 		}
 		event.preventDefault();
 	})
-
 }
 
 function renderComment() {
@@ -58,6 +57,7 @@ function countComment() {
 	var countComment = document.getElementById('js-count-comment');
 	countComment.innerHTML = '<h3>Comment (' + comment.length +')</h3>';
 }
+
 arrayComment();
 renderComment();
 removeComment();
