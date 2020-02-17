@@ -153,9 +153,7 @@ a {
   background-color: #d9e4e9;
   height: 50px;
   line-height: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 2px;
+  padding: 2px 20px 0px;
 }
 .main-container .info-book .list-info-title-top {
   color: #6d777c;
