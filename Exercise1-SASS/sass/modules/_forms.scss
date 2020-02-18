@@ -1,0 +1,23 @@
+.book-content {
+  @extend %flex;
+  flex-direction: column;
+  align-items: center;
+  .input-info {
+    width: 100%;
+    height: 38px;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    border: 0px solid;
+    &:first-child {
+      margin-top: 5px;
+    }
+  }
+  .submit-info {
+    color: #ffffff;
+    font-weight: 900;
+    background-color: #4bbc56;
+    width: 128px;
+    height: 45px;
+  }
+}
