@@ -5,61 +5,77 @@
 	background-color: #06cfef;
 	margin-top: 38px;
   color: #ffffff;
+
   &-top {
     @extend %flex;
     height: 202px;
     text-transform: uppercase;
     font-size: 12px;
     border-bottom: 1px solid #81d1f9;
+
     ul {
       line-height: 30px;
       padding-top: 12px;
     }
+
     h4 {
       font-size: 17px;
       padding-top: 49px;
     }
+
     li {
       color: #ffffff;
     }
+
     h4 {
       color: #ffffff;
     }
+
     .footer-list {
       padding-left: 14px;
     }
+
     .footer-about-us {
       width: 34%;
     }
+
     .footer-support {
       width: 33%;
     }
+
     .footer-social {
+      width: 33.33333%;
+
       ul {
         margin-left: 9px;
       }
-      width: 33.33333%;
+
       a {
         color: #ffffff;
       }
+
       &-item {
         @extend %flex;
         align-items: center;
+
         .connection {
           padding-left: 8px;
         }
       }
     }
   }
+
   &-copyright {
     @extend %flex-between;
     height: 56px;
     line-height: 59px;
     text-transform: uppercase;
     font-size: 12.5px;
+
     .ddcom {
       color: #4bbc56;
     }
+    
     &-item {
       &::before {
         content: '\0040';
