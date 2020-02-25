@@ -1,0 +1,50 @@
+.header {
+  width: 100%;
+  
+  &-top {
+    @extend %flex-between;
+    margin-top: -8px;
+    height: 103px;
+    border-bottom: 1px solid #e9e9e9;
+
+    .logo {
+      @extend %flex;
+      align-items: center;
+
+      &-list {
+        padding-top: 11px;
+        line-height: 27px;
+      }
+
+      &-item {
+        padding-left: 18px;
+        font-size: 17px;
+      }
+
+      &-title {
+        font-family: 'utm-avobold';
+        font-size: 19px;
+        text-transform: uppercase;
+      }
+    }
+
+    .phone-address {
+      @extend %flex;
+      align-items: center;
+
+      .question-doctor {
+        padding-left: 8px;
+        font-size: 14.5px;
+
+        &::after {
+          padding-right: 10px;
+        }
+
+        .phone-number-item {
+          color: #4cc1fc;
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
