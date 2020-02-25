@@ -1,0 +1,51 @@
+.info-book {
+  @extend %flex;
+  flex-direction: column;
+  width: 23.79%;
+  color: #29353c;
+  li {
+    font-family: 'utm-avo';
+    padding-top: 25px;
+    font-size: 13px;
+    line-height: 5px;
+  }
+  .list-info {
+    height: 400px;
+    &-title {
+      @extend %flex-between;
+      background-color: #d9e4e9;
+      height: 50px;
+      line-height: 50px;
+      padding: 2px 20px 0px;
+      &-top {
+        color: #6d777c;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+    }
+    &-list {
+      padding-left: 35px;
+    }
+    .title-children {
+      margin-top: 25px;
+    }
+  }
+  .books-chedule {
+    background-color: #d9e4e9;
+    padding: 24px 20px 20px 20px;
+    margin-top: 40px;
+    .book-title {
+      font-size: 17.5px;
+      padding-bottom: 12px;
+      text-transform: uppercase;
+      &::after {
+        display: block;
+        content: '';
+        border-bottom: 2px solid #62c6f8;
+        width: 68px;
+        height: 2px;
+        padding-top: 16px;
+      }
+    }
+  }
+}
