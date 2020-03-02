@@ -1,5 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
+@media only screen and (max-width: 1024px) {
+  .main--register {
+    top: 5%;
+    position: absolute;
+    font-size: 3rem;
+  }
+
+  .stepper {
+    top: 16%;
+  }
+  
+  .step--1,
+  .step--2,
+  .step--3,
+  .step--4,
+  .step--5 {
+    margin: 10px;
+    border-radius: 50%;
+  }
+
+  .form {
+    margin-top: 100px;
+    width: 50%;
+  }
+
+  .form--name-list {
+    display: block;
+  }
+
+  .form--name-item {
+    width: 100%;
+  }
+
+  input[name='code-number'] {
+    width: 10%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -218,43 +256,5 @@ input[name='code-number'] {
   }
   100% {
     opacity: 1;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .main--register {
-    top: 5%;
-    position: absolute;
-    font-size: 3rem;
-  }
-
-  .stepper {
-    top: 16%;
-  }
-  
-  .step--1,
-  .step--2,
-  .step--3,
-  .step--4,
-  .step--5 {
-    margin: 10px;
-    border-radius: 50%;
-  }
-
-  .form {
-    margin-top: 100px;
-    width: 50%;
-  }
-
-  .form--name-list {
-    display: block;
-  }
-
-  .form--name-item {
-    width: 100%;
-  }
-
-  input[name='code-number'] {
-    width: 10%;
   }
 }
