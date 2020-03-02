@@ -188,6 +188,7 @@ input[name='code-number'] {
   font-weight: 700;
   cursor: pointer;
 }
+
 .form--message-text {
   width: 25rem;
   background: #fff;
@@ -204,9 +205,11 @@ input[name='code-number'] {
   z-index: 1000;
   display: block;
 }
+
 .form-active-animate {
   animation: moveRight 1s;
 }
+
 .form-inactive {
   display: block;
   animation: moveLeft 1s;
