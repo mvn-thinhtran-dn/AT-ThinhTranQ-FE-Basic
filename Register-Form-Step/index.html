@@ -43,11 +43,11 @@
             <h2>Your Phone Number</h2>
           </div>
           <div class="form--phone-number">
-            <input id="phone--1" type="text" name="number-phone" minlength="4" maxlength="4"/>
-            <input id="phone--2" type="text" name="number-phone" minlength="3" maxlength="3"/>
-            <input id="phone--3" type="text" name="number-phone" minlength="3" maxlength="3"/>
+            <input id="phone--1" type="text" class="phone--number" name="number-phone" minlength="4" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <input id="phone--2" type="text" class="phone--number" name="number-phone" minlength="3" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <input id="phone--3" type="text" class="phone--number" name="number-phone" minlength="3" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
           </div>
-          <button class="form__btn" id="btn-2-next" onClick="setStore()">Next</button>
+          <button class="form__btn" id="btn-2-next" onClick="setStore()" disabled>Next</button>
           <button class="form__btn" id="btn-2-prev">Back</button>
         </form>
         <form class="form">

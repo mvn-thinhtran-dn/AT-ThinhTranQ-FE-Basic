@@ -45,24 +45,38 @@ formBtnNext1.addEventListener('click', function(e) {
   }
 });
 
+function checkPhoneNumber() {
+  var input = document.getElementsByClassName('phone--number');
+  for (var i = 0; i < input.length; i++) {
+    input[i].addEventListener("input", function() {
+      var count = 0;
+      for (var i = 0; i <input.length; i++) {
+        count += input[i].value.length;
+      }
+
+      if (count === 10) {
+        formBtnNext2.disabled = false;
+      } else {
+        formBtnNext2.disabled = true;
+      }
+    });
+  }
+}
+
 // Random Code.
 var numberCode = '';
 for(var i = 0; i < 4; i++){
   numberCode += Math.floor(Math.random()*10);
 }
+
 //Set Code in local.
 localStorage.setItem('code',numberCode);
 
 // Next button listener of form 2
 formBtnNext2.addEventListener('click', function(e) {
   e.preventDefault();
-  var getstore = getStore();
-  console.log(getstore[3].length);
-  if(getstore[3].length != 10){
-    return false;
-  }else{
   gotoNextForm(formBtnNext2, formBtnNext3, 2, 3);
-  alert(numberCode);}
+  alert(numberCode);
 });
 
 // Previous button listener of form 2
@@ -175,3 +189,5 @@ function getStore() {
     localStorage.getItem('phone')+localStorage.getItem('phone1') + localStorage.getItem('phone2')
   ];
 }
+
+checkPhoneNumber();
