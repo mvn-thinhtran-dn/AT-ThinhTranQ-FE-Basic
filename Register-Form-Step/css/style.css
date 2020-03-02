@@ -104,13 +104,13 @@ label {
 }
 
 .stepper {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 16%;
-  }
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 16%;
+}
   
 .step--1,
 .step--2,

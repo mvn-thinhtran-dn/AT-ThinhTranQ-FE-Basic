@@ -37,7 +37,13 @@ formBtnNext1.addEventListener('click', function(e) {
             return false;
           }else{
               error.innerHTML = "";
-              gotoNextForm(formBtnNext1, formBtnNext2, 1, 2);
+              if(!password.value || !confPass.value || password.value !== confPass.value) {
+                error.innerHTML = "*Password does not match!";
+                return false;
+              }else {
+                error.innerHTML = "";
+                gotoNextForm(formBtnNext1, formBtnNext2, 1, 2);
+              }
           }
         }
       }
@@ -113,9 +119,9 @@ formBtnPrev3.addEventListener('click', function(e) {
 function renderInfo(){
   var info = document.getElementsByClassName('js--form-information')[0];
   var getstore = getStore();
-  info.innerHTML = '<p class="showinfo">Full Name: ' + getstore[0]+' ' +getstore[1]+'</p>'
-  + '<p class="showinfo">Email: ' + getstore[2] +'</p>'
-  + '<p class="showinfo">Phone Number: ' + getstore[3] +'</p>';
+  info.innerHTML = '<p class="showinfo">Full Name: ' + getstore[0] + ' ' + getstore[1] + '</p>'
+  + '<p class="showinfo">Email: ' + getstore[2] + '</p>'
+  + '<p class="showinfo">Phone Number: ' + getstore[3] + '</p>';
 }
 
 // Submit listener of form 4
