@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-image: url(../img/backgroup-about.jpeg);
   background-size: cover;
@@ -26,7 +28,7 @@ label {
 }
 
 .main--register {
-  top: 5%;
+  top: 3%;
   position: absolute;
   font-size: 4rem;
 }
@@ -37,7 +39,197 @@ label {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 18%;
+    top: 16%;
+  }
+  
+.step--1,
+.step--2,
+.step--3,
+.step--4,
+.step--5 {
+  margin: 25px;
+  border-radius: 50px;
+  width: 2.5rem;
+  padding: 0.5rem 0;
+  background: #fff0ff;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #666;
+}
+
+.form--name-item {
+  width: 50%;
+  list-style-type: none;
+}
+
+.form {
+  padding: 30px;
+  background: #bdbdbd36;
+  margin-top: 100px;
+  position: absolute;
+  width: 35%;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+  border-right: 3px solid #666;
+  border-bottom: 3px solid #666;
+  display: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.form--name-list {
+  display: flex;
+  
+}
+
+.form--header-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#error {
+  text-align: center;
+  width: 76%;
+  margin: 0 auto;
+  color: #f00000;
+  padding: 20px;
+}
+
+input {
+  padding: 0.8rem;
+  margin: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  display: block;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid #bdbdbb;
+  font-size: 1.2rem;
+}
+
+input[type='password'] {
+  font-size: 2.5rem;
+  padding: 0;
+}
+
+.form--phone-number {
+  display: flex;
+  padding: 40px 0;
+}
+
+input[name='number-phone'] {
+  text-align: center;
+  width: 20%;
+}
+
+input[name='number-phone']:first-child:after {
+  content: '\2212';
+}
+
+.form--code-number {
+  display: flex;
+  padding: 40px 0;
+}
+
+input[name='code-number'] {
+  text-align: center;
+  width: 8%;
+}
+
+.form__btn {
+  float: right;
+  background: #333;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  width: 7rem;
+  margin: 1rem auto;
+  border-radius: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+.form--message-text {
+  width: 25rem;
+  background: #fff;
+  color: #444;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+  animation: fadeIn 0.8s;
+  border-radius: 1rem;
+}
+
+.form-active {
+  z-index: 1000;
+  display: block;
+}
+.form-active-animate {
+  animation: moveRight 1s;
+}
+.form-inactive {
+  display: block;
+  animation: moveLeft 1s;
+}
+
+.step-active {
+  background: #666;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.js--form-information {
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.showinfo {
+  padding: 10px 50px;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-27rem) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0rem) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0rem) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(27rem) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main--register {
+    top: 5%;
+    position: absolute;
+    font-size: 3rem;
+  }
+
+  .stepper {
+    top: 16%;
   }
   
   .step--1,
@@ -45,192 +237,24 @@ label {
   .step--3,
   .step--4,
   .step--5 {
-    margin: 25px;
-    border-radius: 50px;
-    width: 2.5rem;
-    padding: 0.5rem 0;
-    background: #fff0ff;
-    color: #666;
-    text-align: center;
-  }
-  .step--1,
-  .step--2,
-  .step--3,
-  .step--4,
-  .step--5 {
-    border-right: 1px solid #666;
-  }
-
-  .form--name-item {
-    width: 50%;
-    list-style-type: none;
+    margin: 10px;
+    border-radius: 50%;
   }
 
   .form {
-    padding: 30px;
-    background: #fff;
     margin-top: 100px;
-    position: absolute;
-    width: 40%;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
-    display: none;
-    border-radius: 1rem;
-    overflow: hidden;
+    width: 50%;
   }
-  /* .form--header-container {
-    background: linear-gradient(to right, rgb(51, 51, 51), #919191);
-    color: #fff;
-    height: 6rem;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-  } */
 
   .form--name-list {
-    display: flex;
-    
-  }
-  
-  .form--header-title {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  #error {
-    text-align: center;
-    width: 76%;
-    margin: 0 auto;
-    color: #f00000;
-    padding: 20px;
-  }
-  
-  /* .form--header-text {
-    padding: 0.5rem 0;  
-  } */
-  
-  input {
-    padding: 0.8rem;
-    margin: auto;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    width: 100%;
     display: block;
-    border-radius: 0.5rem;
-    outline: none;
-    border: 1px solid #bdbdbb;
-    font-size: 1.2rem;
   }
 
-  input[type='password'] {
-    font-size: 2.5rem;
-    padding: 0;
-  }
-
-  .form--phone-number {
-    display: flex;
-    padding: 40px 0;
-  }
-
-  input[name='number-phone'] {
-    text-align: center;
-    width: 20%;
-  }
-
-  input[name='number-phone']:first-child:after {
-    content: '\2212';
-  }
-
-  .form--code-number {
-    display: flex;
-    padding: 40px 0;
+  .form--name-item {
+    width: 100%;
   }
 
   input[name='code-number'] {
-    text-align: center;
-    width: 8%;
-    
+    width: 10%;
   }
-  
-  .form__btn {
-    float: right;
-    background: #333;
-    color: #fff;
-    outline: none;
-    border: none;
-    padding: 0.5rem 0.7rem;
-    width: 7rem;
-    margin: 1rem auto;
-    border-radius: 0.9rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .form--message-text {
-    width: 25rem;
-    background: #fff;
-    color: #444;
-    padding: 2rem 1rem;
-    text-align: center;
-    font-size: 1.4rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
-    animation: fadeIn 0.8s;
-    border-radius: 1rem;
-  }
-
-  .form-active {
-    z-index: 1000;
-    display: block;
-  }
-  .form-active-animate {
-    animation: moveRight 1s;
-  }
-  .form-inactive {
-    display: block;
-    animation: moveLeft 1s;
-  }
-  
-  .step-active {
-    background: #666;
-    color: #fff;
-    border: 1px solid #666;
-  }
-
-  .js--form-information {
-    border: 1px solid;
-    padding: 15px;
-    border-radius: 20px;
-  }
-
-  .showinfo {
-    padding: 10px 50px;
-  }
-
-  @keyframes moveRight {
-    0% {
-      transform: translateX(-27rem) scale(0.9);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0rem) scale(1);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes moveLeft {
-    0% {
-      transform: translateX(0rem) scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(27rem) scale(0.9);
-      opacity: 0;
-    }
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+}

@@ -55,9 +55,14 @@ localStorage.setItem('code',numberCode);
 
 // Next button listener of form 2
 formBtnNext2.addEventListener('click', function(e) {
-  gotoNextForm(formBtnNext2, formBtnNext3, 2, 3);
   e.preventDefault();
-  alert(numberCode);
+  var getstore = getStore();
+  console.log(getstore[3].length);
+  if(getstore[3].length != 10){
+    return false;
+  }else{
+  gotoNextForm(formBtnNext2, formBtnNext3, 2, 3);
+  alert(numberCode);}
 });
 
 // Previous button listener of form 2
@@ -74,8 +79,9 @@ formBtnNext3.addEventListener('click', function(e) {
   var code2 = document.getElementById('code-number2').value;
   var code3 = document.getElementById('code-number3').value;
   var code4 = document.getElementById('code-number4').value;
+  var stringCode = code1.toString() + code2.toString() + code3.toString() + code4.toString();
   e.preventDefault();
-  if(codeGet === code1.toString() + code2.toString() + code3.toString() + code4.toString()){
+  if(codeGet === stringCode){
     gotoNextForm(formBtnNext3, formBtnSubmit4, 3, 4);
     renderInfo();
   }else{
@@ -160,6 +166,7 @@ function setStore() {
   localStorage.setItem('phone2', phoneNumber3.value); 
 }
 
+//Get LocalStorage
 function getStore() {
   return [
     localStorage.getItem('fisrt-name'),
@@ -167,5 +174,4 @@ function getStore() {
     localStorage.getItem('email'),
     localStorage.getItem('phone')+localStorage.getItem('phone1') + localStorage.getItem('phone2')
   ];
-  
 }
