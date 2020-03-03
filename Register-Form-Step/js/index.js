@@ -91,6 +91,21 @@ formBtnPrev2.addEventListener('click', function(e) {
   e.preventDefault();
 });
 
+// Auto next input code.
+function autoNextCode() {
+  var codeNumber = document.getElementsByClassName('code-number');
+  for (var i = 0; i < codeNumber.length-1 ; i++) {
+    codeNumber[i].addEventListener('input',function(e){
+      var temp = e.target;
+      if(temp.value.length === 1) {
+        temp.nextSibling.nextSibling.focus();
+      }
+    },true);
+  }
+}
+
+autoNextCode();
+
 // Next button listener of form 3
 formBtnNext3.addEventListener('click', function(e) {
   var code = localStorage.getItem('code');
