@@ -31,45 +31,6 @@
   }
 }
 
-
-@media only screen and (max-width: 1024px) {
-  .main--register {
-    top: 5%;
-    position: absolute;
-    font-size: 3rem;
-  }
-
-  .stepper {
-    top: 16%;
-  }
-  
-  .step--1,
-  .step--2,
-  .step--3,
-  .step--4,
-  .step--5 {
-    margin: 10px;
-    border-radius: 50%;
-  }
-
-  .form {
-    margin-top: 100px;
-    width: 50%;
-  }
-
-  .form--name-list {
-    display: block;
-  }
-
-  .form--name-item {
-    width: 100%;
-  }
-
-  input[name='code-number'] {
-    width: 10%;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -132,6 +93,15 @@ label {
   list-style-type: none;
 }
 
+.form--name-item:first-child {
+  padding-right: 0.5rem;
+}
+
+.form--name-item:last-child {
+  padding-left: 0.5rem;
+}
+
+
 .form {
   padding: 30px;
   background: #bdbdbd36;
@@ -148,7 +118,6 @@ label {
 
 .form--name-list {
   display: flex;
-  
 }
 
 .form--header-title {
@@ -189,11 +158,7 @@ input[type='password'] {
 
 input[name='number-phone'] {
   text-align: center;
-  width: 20%;
-}
-
-input[name='number-phone']:first-child:after {
-  content: '\2212';
+  width: 25%;
 }
 
 .form--code-number {
@@ -214,7 +179,7 @@ input[name='code-number'] {
   border: none;
   padding: 0.5rem 0.7rem;
   width: 7rem;
-  margin: 1rem auto;
+  margin: 0.7rem;
   border-radius: 0.9rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -266,4 +231,51 @@ input[name='code-number'] {
 button:disabled,
 button[disabled] {
   opacity: 0.5; 
+}
+
+@media only screen and (max-width: 1023px) {
+  .main--register {
+    top: 5%;
+    position: absolute;
+    font-size: 3rem;
+  }
+
+  .stepper {
+    top: 16%;
+  }
+  
+  .step--1,
+  .step--2,
+  .step--3,
+  .step--4,
+  .step--5 {
+    margin: 10px;
+    border-radius: 50%;
+  }
+
+  .form {
+    margin-top: 100px;
+    width: 50%;
+  }
+
+  .form--name-list {
+    display: block;
+  }
+
+  .form--name-item {
+    width: 100%;
+  }
+
+  .form--name-item:first-child {
+    padding-right: 0;
+  }
+  
+  .form--name-item:last-child {
+    padding-left: 0;
+  }
+
+  input[name='code-number'] {
+    width: 15%;
+  }
+  
 }

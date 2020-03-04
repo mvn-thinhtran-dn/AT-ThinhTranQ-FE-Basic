@@ -5,45 +5,46 @@ var formBtnNext3 = document.querySelector('#btn-3-next');
 var formBtnPrev3 = document.querySelector('#btn-3-prev');
 var formBtnSubmit4 = document.querySelector('#btn-4-submit');
 var formBtnPrev4 = document.querySelector('#btn-4-prev');
+var fname = document.getElementById('js--fisrt-name');
+var lname = document.getElementById('js--last-name');
+var email = document.getElementById('js--email');
+var password = document.getElementById('js--pass');
+var confPass = document.getElementById('js--conf-pass');
+var phoneNumber1 = document.getElementById('phone--1');
+var phoneNumber2 = document.getElementById('phone--2');
+var phoneNumber3 = document.getElementById('phone--3');
 
 // Button listener of form 1
 formBtnNext1.addEventListener('click', function(e) {
   e.preventDefault();
   var error = document.getElementById('error');
-  
+
   if(!fname.value) {
     error.innerHTML = "*Fisrt name is required!";
-    return false;
-  }
-  else{ 
+  } else { 
     error.innerHTML = "";
-    if(!lname.value){
+    if(!lname.value) {
       error.innerHTML = "*Last name is required!";
-      return false;
-    }else{
+    } else {
       error.innerHTML = "";
-      if(!email.value){
+      if(!email.value) {
         error.innerHTML = "*Email is required!";
-        return false;
-      }else{
+      } else {
         error.innerHTML = "";
-        if(!password.value){
+        if(!password.value) {
           error.innerHTML = "*Password is required!";
-          return false;
-        }else{
+        } else {
           error.innerHTML = "";
-          if(!confPass.value){
+          if(!confPass.value) {
             error.innerHTML = "*Confirm password is required!";
-            return false;
-          }else{
+          } else {
+            error.innerHTML = "";
+            if(!password.value || !confPass.value || password.value !== confPass.value) {
+              error.innerHTML = "*Password does not match!";
+            } else {
               error.innerHTML = "";
-              if(!password.value || !confPass.value || password.value !== confPass.value) {
-                error.innerHTML = "*Password does not match!";
-                return false;
-              }else {
-                error.innerHTML = "";
-                gotoNextForm(formBtnNext1, formBtnNext2, 1, 2);
-              }
+              gotoNextForm(formBtnNext1, formBtnNext2, 1, 2);
+            }
           }
         }
       }
@@ -68,6 +69,7 @@ function checkPhoneNumber() {
     });
   }
 }
+checkPhoneNumber();
 
 // Random Code.
 var numberCode = '';
@@ -95,7 +97,7 @@ formBtnPrev2.addEventListener('click', function(e) {
 function autoNextCode() {
   var codeNumber = document.getElementsByClassName('code-number');
   for (var i = 0; i < codeNumber.length-1 ; i++) {
-    codeNumber[i].addEventListener('input',function(e){
+    codeNumber[i].addEventListener('input',function(e) {
       var temp = e.target;
       if(temp.value.length === 1) {
         temp.nextSibling.nextSibling.focus();
@@ -103,7 +105,6 @@ function autoNextCode() {
     },true);
   }
 }
-
 autoNextCode();
 
 // Next button listener of form 3
@@ -131,7 +132,7 @@ formBtnPrev3.addEventListener('click', function(e) {
 });
 
 //Information Step 4
-function renderInfo(){
+function renderInfo() {
   var info = document.getElementsByClassName('js--form-information')[0];
   var getstore = getStore();
   info.innerHTML = '<p class="showinfo">Full Name: ' + getstore[0] + ' ' + getstore[1] + '</p>'
@@ -144,9 +145,7 @@ formBtnSubmit4.addEventListener('click', function(e) {
   document.querySelector(`.step--4`).classList.remove('step-active');
   document.querySelector(`.step--5`).classList.add('step-active');
   formBtnSubmit4.parentElement.style.display = 'none';
-  document.querySelector('.form--message').innerHTML = `
-    <h1 class="form--message-text">Your account is successfully created </h1>
-    `;
+  document.querySelector('.form--message').innerHTML = `<h1 class="form--message-text">Your account is successfully created </h1>`;
   e.preventDefault();
 });
 
@@ -180,16 +179,7 @@ var gotoNextForm = (prev, next, stepPrev, stepNext) => {
   }, 950);
 };
 
-var fname = document.getElementById('js--fisrt-name');
-var lname = document.getElementById('js--last-name');
-var email = document.getElementById('js--email');
-var password = document.getElementById('js--pass');
-var confPass = document.getElementById('js--conf-pass');
-var phoneNumber1 = document.getElementById('phone--1');
-var phoneNumber2 = document.getElementById('phone--2');
-var phoneNumber3 = document.getElementById('phone--3');
-
-  // Set LocalStorage
+// Set LocalStorage
 function setStore() {
   localStorage.setItem('fisrt-name', fname.value);
   localStorage.setItem('last-name', lname.value);
@@ -210,5 +200,3 @@ function getStore() {
     localStorage.getItem('phone')+localStorage.getItem('phone1') + localStorage.getItem('phone2')
   ];
 }
-
-checkPhoneNumber();
