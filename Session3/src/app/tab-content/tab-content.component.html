@@ -4,7 +4,7 @@
         <div class="content">
       <h3>TABBED</h3>
       <img src="../../assets/img/{{item.img}}" style="width: 300px; height: 100;">
-      <button *ngIf="Number == 4" class="btn-back" (click)="getIsStep()">Back</button>
+      <button *ngIf="Number === 4" class="btn-back" (click)="getIsStep()">Back</button>
         </div>
       <div class="footer">
         <ng-container *ngTemplateOutlet="logo"></ng-container>

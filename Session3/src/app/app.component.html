@@ -1,10 +1,10 @@
 <div class="page">
   <h1>{{title}}</h1>
   <ul class="nav-list">
-    <li class="nav-item"><a (click)="onclick(1)" [className]="number == 1 ? 'active' : ''">TABBED</a></li>
-    <li class="nav-item"><a (click)="onclick(2)" [className]="number == 2 ? 'active' : ''">HTML5</a></li>
-    <li class="nav-item"><a (click)="onclick(3)" [className]="number == 3 ? 'active' : ''">CSS3</a></li>
-    <li class="nav-item"><a (click)="onclick(4)" [className]="number == 4 ? 'active' : ''">LIGHT</a></li>
+    <li class="nav-item"><a (click)="onclick(1)" [className]="number === 1 ? 'active' : ''">TABBED</a></li>
+    <li class="nav-item"><a (click)="onclick(2)" [className]="number === 2 ? 'active' : ''">HTML5</a></li>
+    <li class="nav-item"><a (click)="onclick(3)" [className]="number === 3 ? 'active' : ''">CSS3</a></li>
+    <li class="nav-item"><a (click)="onclick(4)" [className]="number === 4 ? 'active' : ''">LIGHT</a></li>
   </ul>
   <app-tab-content [Number]="number"
     (onHandleStep)="onGet($event)">
