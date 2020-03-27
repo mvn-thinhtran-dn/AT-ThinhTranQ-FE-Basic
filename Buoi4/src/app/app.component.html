@@ -1,0 +1,8 @@
+<div *ngFor='let item of arrProduct'>
+  <img>
+  <div appFavourite [count]="item">
+    <p>{{item.name}}</p>
+    <i class="fa fa-heart"></i>
+    <p>{{item.count}}</p>
+  </div>
+</div>
