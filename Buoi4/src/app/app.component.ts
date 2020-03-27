@@ -13,25 +13,29 @@ export class AppComponent {
       id: 1,
       img: '',
       name: 'A',
-      count: 20
+      count: 20,
+      isClick: false
     },
     {
       id: 2,
       img: '',
       name: 'B',
-      count: 10
+      count: 10,
+      isClick: false
     },
     {
       id: 3,
       img: '',
       name: 'C',
-      count: 15
+      count: 15,
+      isClick: false
     },
     {
       id: 4,
       img: '',
       name: 'D',
-      count: 8
+      count: 8,
+      isClick: false
     },
   ]
 }

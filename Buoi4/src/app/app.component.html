@@ -1,8 +1,8 @@
-<div *ngFor='let item of arrProduct'>
+<div *ngFor = 'let item of arrProduct'>
   <img>
-  <div appFavourite [count]="item">
+  <div appFavourite [data] = "item">
     <p>{{item.name}}</p>
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-heart" [ngStyle]="{ 'color': item.isClick ? 'red' : 'black'}"></i>
     <p>{{item.count}}</p>
   </div>
 </div>

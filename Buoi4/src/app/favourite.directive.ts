@@ -5,16 +5,15 @@ import { Directive, Input, ElementRef, HostListener } from '@angular/core';
 })
 export class FavouriteDirective {
 
-  @Input() count : any;
-  constructor(private el: ElementRef) { }
+  @Input() data : any;
+  constructor() { }
 
   @HostListener('click', ['$event.target'])
-  onclick(el : any) {
-    if (el.nodename === 'I') {
-      el.style.color = 'red';
+  onClick(el : any) {
+    if (el.nodeName === 'I') {
+      this.data.isClick = !this.data.isClick;
+      this.data.isClick ? this.data.count += 1 : this.data.count -= 1;
     }
-    console.log(el);
   }
-
 
 }
