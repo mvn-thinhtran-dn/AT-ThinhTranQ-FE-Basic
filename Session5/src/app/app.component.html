@@ -1,0 +1,35 @@
+<div class="tab-product">
+  <ul *ngFor=" let item of arrProduct">
+    <li>
+      <h3>{{item.title | titlelimit}}</h3>
+      <img src="../assets/img/{{item.img}}">
+      <p>{{item.description | limit}}</p>
+    </li>
+  </ul>
+</div>
+<div class="tab">
+  <div class="tab-form">
+    <div class="form-list">
+      <div class="form-item">
+        <label for="" class="input-title">Decription: </label>
+        <textarea type="text" class="form-control" [(ngModel)]="inputDescription"></textarea>
+      </div>
+    </div>
+    <div class="btn-list">
+      <button class="btn btn-save" (click)="setLocal(inputDescription)">Save Local</button>
+      <button class="btn btn-get" (click)="getLocal()">Get Local</button>
+      <button class="btn btn-save" (click)="setSession(inputDescription)">Save Session</button>
+      <button class="btn btn-get" (click)="getSession()">Get Session</button>
+    </div>
+  </div>
+  <div class="result">
+    <div class="result-item">
+      <h3 class="result-title">GetLocal: </h3>
+      <p class="result-desc">{{resultLocal}}</p>
+    </div>
+    <div class="result-item">
+      <h3 class="result-title">GetSession: </h3>
+      <p class="result-desc">{{resultSession}}</p>
+    </div>
+  </div>
+</div>
