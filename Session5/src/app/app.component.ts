@@ -16,10 +16,7 @@ export class AppComponent {
   resultSession : object;
   inputDescription : string;
 
-  // search text property
-  searchText: string;
-
-  // list of categories
+  // list of arrProduct
   arrProduct: any[] = [
   {
     title: 'SamSung Galaxy Note 10 Plus',
@@ -29,12 +26,12 @@ export class AppComponent {
   {
     title: 'Iphone XS Max',
     img: 'ipxsmax.png',
-    description:'iPhone Xs Max 256GB là chiếc iPhone có màn hình lớn nhất, bộ nhớ trong dồi dào, mang trên mình những công nghệ đỉnh cao hoàn hảo.'
+    description:'IPhone Xs Max 256GB là chiếc iPhone có màn hình lớn nhất, bộ nhớ trong dồi dào, mang trên mình những công nghệ đỉnh cao hoàn hảo.'
   },
   {
     title: 'Iphone 11 Pro Max',
     img: 'ip11.png',
-    description: 'iPhone 11 Pro Max 512GB là phiên bản có bộ nhớ nhiều nhất, màn hình lớn nhất và thời lượng pin tuyệt vời nhất hiện nay. Bạn sẽ được cầm trên tay chiếc điện thoại đẳng cấp mà bất cứ ai cũng mơ ước.'
+    description: 'IPhone 11 Pro Max 512GB là phiên bản có bộ nhớ nhiều nhất, màn hình lớn nhất và thời lượng pin tuyệt vời nhất hiện nay. Bạn sẽ được cầm trên tay chiếc điện thoại đẳng cấp mà bất cứ ai cũng mơ ước.'
   }
   ]
 

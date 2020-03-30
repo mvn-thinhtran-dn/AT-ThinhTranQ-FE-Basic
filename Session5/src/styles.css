@@ -12,7 +12,6 @@ ul {
 
 li {
   padding: 5px;
-  border: 1px solid;
   border-radius: 13px;
   background: #f5f5f5;
   max-width: 60%;
@@ -61,4 +60,8 @@ p {
 
 .btn-get {
   background: #3d6f6a;
+}
+
+.result {
+  padding: 5% 10%;
 }
