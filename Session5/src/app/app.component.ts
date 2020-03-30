@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { LocalerService } from './core/service/localer.service';
-import { Observable } from 'rxjs';
-import { Subscription } from 'rxjs';
-import { newArray } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-root',
