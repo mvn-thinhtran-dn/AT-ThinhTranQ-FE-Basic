@@ -1,9 +1,9 @@
 <div class="tab-product">
   <ul *ngFor=" let item of arrProduct">
     <li>
-      <h3>{{item.title | titlelimit}}</h3>
+      <h3>{{item.title | limit:3:15}}</h3>
       <img src="../assets/img/{{item.img}}">
-      <p>{{item.description | limit}}</p>
+      <p>{{item.description | limit:3:100}}</p>
     </li>
   </ul>
 </div>
