@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page {
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.tab-content {
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+}
+.nav-item {
+  padding-right: 10px;
+}
+
+a {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 8px 30px;
+  text-align: center;
+  width: 70px;
+  background-color: #b7b7bd;
+}
+
+.active {
+  background-color: #ffffff;
+}
+
+button {
+  border-radius: 5px;
+  height: 30px;
+  width: 60px;
+}
+
+.footer {
+  display: flex;
+  border-top: 1px solid;
+  text-align: center;
+}
